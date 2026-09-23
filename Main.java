@@ -1,17 +1,12 @@
 public class Main {
-
     public static void main(String[] args) {
-
         System.out.println("Factory Method: \n");
 
         BicycleCreator mountainCreator = new MountainBicycleCreator();
-        Bicycle mountainBike = mountainCreator.createBicycle();
+        mountainCreator.rideBicycle();
 
         BicycleCreator cityCreator = new CityBicycleCreator();
-        Bicycle cityBike = cityCreator.createBicycle();
-
-        mountainBike.ride();
-        cityBike.ride();
+        cityCreator.rideBicycle();
 
         System.out.println("\n--- --- --- --- ---");
 
@@ -24,7 +19,7 @@ public class Main {
 
         mountainBicycle.ride();
         mountainHelmet.wear();
-        
+
         BicycleFactory cityFactory = new CityBicycleFactory();
 
         Bicycle cityBicycle = cityFactory.createBicycle();
